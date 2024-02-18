@@ -49,18 +49,18 @@ int main()
     {
         triggerException(ErrorType::Disk);
     }
-    catch (const FileIOException &e)
+    catch (const DiskAccessException &e)
     {
-        std::cerr << "FileIOException: " << e.what() << std::endl;
+        std::cerr << "DiskAccessException: " << e.what() << std::endl;
     }
     catch (const FilePermissionException &e)
     {
         std::cerr << "FilePermissionException: " << e.what() << std::endl;
     }
-    catch (const DiskAccessException &e)
+    catch (const FileIOException &e)
     {
-        std::cerr << "DiskAccessException: " << e.what() << std::endl;
-    }
+        std::cerr << "FileIOException: " << e.what() << std::endl;
+    }    
     catch (const std::exception &e)
     {
         std::cerr << "std::exception: " << e.what() << std::endl;

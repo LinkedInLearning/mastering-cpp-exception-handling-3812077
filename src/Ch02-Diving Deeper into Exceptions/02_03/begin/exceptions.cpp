@@ -33,7 +33,7 @@ int main()
 {
     try
     {
-        triggerException(ErrorType::Disk);
+        triggerException(ErrorType::None);
     }
     catch (...)
     {

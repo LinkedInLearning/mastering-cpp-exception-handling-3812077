@@ -47,9 +47,9 @@ int main()
 {
     try
     {
-        triggerException(ErrorType::FileIO);
+        triggerException(ErrorType::Permission);
     }
-    catch (const FileIOException &e)
+        catch (const FileIOException &e)
     {
         std::cerr << "FileIOException: " << e.what() << std::endl;
     }
