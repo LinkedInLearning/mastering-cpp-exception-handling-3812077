@@ -4,10 +4,12 @@
 #include <cstring>
 #include <cerrno>
 
-int main() {
+int main()
+{
     // Establish the custom termination handler
-    std::set_terminate([]() -> void {
-        std::cerr << "Terminate called after an exception escaped unnoticed. Details: ";
+    std::set_terminate([]() -> void
+                       {
+        std::cerr << "std::terminate() called after an exception escaped unnoticed. Details: ";
         try {
             // Attempt to identify and handle the rogue exception
             std::rethrow_exception(std::current_exception());
@@ -21,8 +23,7 @@ int main() {
         // Report system errors that might relate to the exception
         std::cerr << "System errno: " << errno << " (" << std::strerror(errno) << ")." << std::endl;
         // Abruptly terminate the program to prevent further issues
-        std::abort();
-    });
+        std::abort(); });
 
     // Example usage that leads to the termination handler being invoked
     throw std::runtime_error("Example of a rogue exception");
