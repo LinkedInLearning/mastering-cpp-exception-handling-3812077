@@ -18,7 +18,6 @@ public:
     { 
         // Use std::make_unique for safe memory allocation
         std::cout << "Constructing loader for config: " << configName << ".\n";
-        memset(settingsBuffer.get(), 0, sizeof(int) * 1024);
 
         if (configName == "invalid")
         {

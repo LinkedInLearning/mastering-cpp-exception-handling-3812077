@@ -12,7 +12,6 @@ public:
     {   
         // Simulate allocation for settings
         std::cout << "Constructing loader for config: " << configName << ".\n";
-        memset(settingsBuffer, 0, sizeof(int) * 1024); // Initialize buffer with default settings
 
         if (configName == "invalid")
         {
