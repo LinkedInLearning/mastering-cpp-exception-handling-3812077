@@ -19,7 +19,7 @@ void workerFunction(int id)
     catch (const std::exception &e)
     {
         // The std::lock_guard ensures that only one thread writes to std::cerr at any given time
-        //std::lock_guard<std::mutex> guard(cerrMutex);
+        std::lock_guard<std::mutex> guard(cerrMutex);
         std::cerr << "Exception in thread " << id << ": " << e.what() << std::endl;
     }
 }
